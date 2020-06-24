@@ -1,13 +1,13 @@
 body{
-    background-color: #0063c6;
+    background-color: #ddf1fa;
     font-family: 'Roboto', sans-serif;
 }
 h1{
-    color:white;
+    color:darkslategray
 }
 p{
-    color: white;
+    color: darkslategray;
 }
 hr{
-    color:white
+    color:darkslategray
 }
