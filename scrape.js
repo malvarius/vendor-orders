@@ -51,7 +51,7 @@ This is Kara from Reunion/Asada just emailing you to setup an order for the foll
         var outtro = `\nRegards, \nKara Trieglaff`
         var list =''
         finalObject[key].forEach(element=>{
-            var lineItem= `${element.Alcohol} | Quantity: ${element.par} \n`
+            var lineItem= `${element.Alcohol} | Quantity: ${element.par} ${element.type} \n`
             list+= lineItem
         })
 
