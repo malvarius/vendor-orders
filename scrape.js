@@ -1,4 +1,6 @@
-var audio = new Audio('click.wav');
+$(document).ready(function(){
+    var audio = new Audio('click.wav');
+doRest();
    $(".vendor").on('click',function(){
         console.log("clicked")
         doRest()
@@ -71,3 +73,4 @@ $(document).on('click',`.grabText`,function(){
        navigator.clipboard.writeText(value)
     
      })
+})
