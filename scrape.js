@@ -58,7 +58,7 @@ Kara Trieglaff`
 
         var email = intro + list + outtro
         var textArea=`<textarea name="input" id="appendText${count}" class="text-left d-block mx-auto"  cols="100" rows="10">${email}</textarea>
-        <button data-id="${count}" class="btn btn-success d-block mx-auto mb-5 grabText">Copy to Clipboard</button>
+        <button data-id="${count}" class="btn btn-primary d-block mx-auto mb-5 grabText">Copy to Clipboard</button>
         `
         
         $('.emails').append(`<div class="col-sm-6">${textArea}</div>`)
