@@ -58,11 +58,12 @@ This is Kara from Reunion/Asada just emailing you to setup an order for the foll
         })
 
         var email = intro + list + outtro
-        var textArea=`<textarea name="input" id="appendText${count}" class="text-left d-block mx-auto textArea"  cols="100" rows="10">${email}</textarea>
+        var textArea=`<h2 class="text-center">${finalObject[key][0].Vendor}</h2>
+        <textarea name="input" id="appendText${count}" class="text-left d-block mx-auto textArea"  cols="100" rows="10">${email}</textarea>
         <button data-id="${count}" class="btn btn-primary d-block mx-auto mb-5 grabText">Copy to Clipboard</button>
         `
         
-        $('.emails').append(`<div class="col-sm-6">${textArea}</div>`)
+        $('.emails').append(`<div class="col-sm-3">${textArea}</div>`)
     }
 }
 $(document).on('click',`.grabText`,function(){
