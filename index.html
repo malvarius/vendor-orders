@@ -8,17 +8,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="d-flex flex-column h-100">
     <div class="container-fluid tableHere"><br><br>
         <h1 class="text-center">Email Vendors for Restocking</h1>
 
     <button class="btn btn-primary vendor d-block mx-auto"> Refresh Vendor Info </button> <br><br>
     <div class="emails row"></div>
+    <hr>
+    
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js" integrity="sha256-bd8XIKzrtyJ1O5Sh3Xp3GiuMIzWC42ZekvrMMD4GxRg=" crossorigin="anonymous"></script>
     <script src="./scrape.js"></script> 
+    <footer class="footer mb-auto py-3">
+        <div class="container">
+            <img src="./wine.jpg" class="img-fluid mx-auto d-block">
+        </div>
+      </footer>
 </body>
 
 </html>

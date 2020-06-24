@@ -19,3 +19,9 @@ margin: 15px;
          overflow:scroll;
          left: 10%;
 }
+img{
+    border-style: solid;
+    border-color: #ddf1fa;
+    border-width: 2px;
+    border-radius: 5px;
+}
