@@ -8,6 +8,7 @@ doRest();
 
 async function doRest(){
     var info = await axios.get("https://spreadsheets.google.com/feeds/cells/1xSbe_GEtTUH0sJevvg7IjKdYttdcVW0Fx2yUcjlqMyo/1/public/full?alt=json")
+    $('.emails').empty()
     var headers=[];
     var products=[];
     var data = info.data.feed.entry
@@ -27,7 +28,6 @@ async function doRest(){
         products.push(object)
         }
     });
-    console.log(products)
     var groupedRows = [];
     for(var i=0; i<products.length ; i=i+headers.length){
         var listItem={}
@@ -58,7 +58,7 @@ This is Kara from Reunion/Asada just emailing you to setup an order for the foll
         })
 
         var email = intro + list + outtro
-        var textArea=`<textarea name="input" id="appendText${count}" class="text-left d-block mx-auto"  cols="100" rows="10">${email}</textarea>
+        var textArea=`<textarea name="input" id="appendText${count}" class="text-left d-block mx-auto textArea"  cols="100" rows="10">${email}</textarea>
         <button data-id="${count}" class="btn btn-primary d-block mx-auto mb-5 grabText">Copy to Clipboard</button>
         `
         

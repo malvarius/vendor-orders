@@ -14,3 +14,8 @@ hr{
 .btn{
 margin: 15px;
 }
+.textArea{
+        max-width: 80%;
+         overflow:scroll;
+         left: 10%;
+}
