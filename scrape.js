@@ -48,7 +48,7 @@ async function doRest(){
         count++
         var intro = `Hi ${finalObject[key][0].Vendor},\n
 This is Kara from Reunion/Asada just emailing you to setup an order for the following items: \n \n`
-        var outtro = `Regards, \n
+        var outtro = `\n Regards, \n
 Kara Trieglaff`
         var list =''
         finalObject[key].forEach(element=>{
