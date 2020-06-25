@@ -12,18 +12,19 @@ async function doRest(){
     var headers=[];
     var products=[];
     var data = info.data.feed.entry
-    // console.log(data)
+    console.log(data)
     var currentRow='';
     data.forEach(item => {
         var row= item.gs$cell.row
-        var value = item.content.$t
+        var value = item.content.$t || ""
         if(row==='1'){
             headers.push(value)
         }else if(row!=="1"){
+            console.log("Row: "+row+ "Column: "+item.gs$cell.col)
         var column = headers[Number(item.gs$cell.col)-1]
         var object = {
             category:column,
-            value:value
+            value:value || ""
         }
         products.push(object)
         }
@@ -37,6 +38,7 @@ async function doRest(){
         groupedRows.push(listItem)
     }
    var finalObject={};
+   console.log(groupedRows)
     groupedRows.forEach(thing=>{
         if(finalObject[thing.Vendor]){
             finalObject[thing.Vendor].push(thing)
@@ -53,8 +55,10 @@ This is Kara from Reunion/Asada just emailing you to setup an order for the foll
         var outtro = `\nRegards, \nKara Trieglaff`
         var list =''
         finalObject[key].forEach(element=>{
-            var lineItem= `${element.Alcohol} | Quantity: ${element.par} ${element.type} \n`
+            if(element.par>0){
+                var lineItem= `${element.Alcohol} | Type: ${element.Type} | Quantity: ${element.par} ${element.type} \n`
             list+= lineItem
+            }
         })
 
         var email = intro + list + outtro
