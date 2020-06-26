@@ -33,17 +33,18 @@ async function doRest(){
     for(var i=0; i<products.length ; i=i+headers.length){
         var listItem={}
         for(var j=0; j<headers.length; j++){
-            listItem[headers[j]]=products[j+i].value
+            listItem[headers[j]]=products[j+i].value.trim();
         }
         groupedRows.push(listItem)
     }
    var finalObject={};
    console.log(groupedRows)
     groupedRows.forEach(thing=>{
-        if(finalObject[thing.Vendor]){
-            finalObject[thing.Vendor].push(thing)
-        }else if(!finalObject[thing.Vendor]){
-            finalObject[thing.Vendor]=[thing]
+        var vendor= thing.Vendor.trim()
+        if(finalObject[vendor]){
+            finalObject[vendor].push(thing)
+        }else if(!finalObject[vendor]){
+            finalObject[vendor]=[thing]
         }
     })
     console.log(finalObject)
@@ -67,7 +68,7 @@ This is Kara from Reunion/Asada just emailing you to setup an order for the foll
         <button data-id="${count}" class="btn btn-primary d-block mx-auto mb-5 grabText">Copy to Clipboard</button>
         `
         
-        $('.emails').append(`<div class="col-sm-3">${textArea}</div>`)
+        $('.emails').append(`<div class="col-sm-4">${textArea}</div>`)
     }
 }
 $(document).on('click',`.grabText`,function(){
