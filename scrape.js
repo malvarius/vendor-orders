@@ -57,7 +57,8 @@ This is Kara from Reunion/Asada just emailing you to setup an order for the foll
         var list =''
         finalObject[key].forEach(element=>{
             if(element.par>0){
-                var lineItem= `${element.Alcohol} | Type: ${element.Type} | Quantity: ${element.par} ${element.type} \n`
+                var lineItem= `==============================================
+${element.Alcohol} | Type: ${element.Type} | Quantity: ${element.par} ${element.type} \n`
             list+= lineItem
             }
         })
@@ -68,7 +69,9 @@ This is Kara from Reunion/Asada just emailing you to setup an order for the foll
         <button data-id="${count}" class="btn btn-primary d-block mx-auto mb-5 grabText">Copy to Clipboard</button>
         `
         
-        $('.emails').append(`<div class="col-sm-4">${textArea}</div>`)
+        if(finalObject[key][0].Vendor!="not ordered"){
+            $('.emails').append(`<div class="col-sm-4">${textArea}</div>`)
+        }
     }
 }
 $(document).on('click',`.grabText`,function(){
